@@ -64,19 +64,21 @@ animation:fade .7s ease;
 }
 
 .logo{
-width:95px;
-height:95px;
-margin:auto;
-border-radius:50%;
-background:linear-gradient(135deg,#2563eb,#0ea5e9);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:46px;
-font-weight:bold;
-margin-bottom:18px;
-box-shadow:0 10px 30px rgba(37,99,235,.45);
+    width:110px;
+    height:110px;
+    margin:auto;
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
+  
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    filter:drop-shadow(0 0 18px rgba(37,99,235,.55));
+}  
 
 h1{
 font-size:42px;
@@ -164,7 +166,7 @@ padding:16px;
 <div class="card">
 
 <div class="logo">
-B
+    <img src="logo.svg" alt="BKD Media Logo">
 </div>
 
 <h1>BKD GO</h1>
