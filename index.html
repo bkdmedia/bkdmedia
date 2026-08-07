@@ -64,8 +64,8 @@ animation:fade .7s ease;
 }
 
 .logo{
-    width:110px;
-    height:110px;
+    width:125px;
+    height:125px;
     margin:auto;
     margin-bottom:18px;
     display:flex;
@@ -78,7 +78,17 @@ animation:fade .7s ease;
     height:100%;
     object-fit:contain;
     filter:drop-shadow(0 0 18px rgba(37,99,235,.55));
-}  
+    animation:logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow{
+    0%,100%{
+        filter:drop-shadow(0 0 18px rgba(37,99,235,.45));
+    }
+    50%{
+        filter:drop-shadow(0 0 30px rgba(37,99,235,.75));
+    }
+} 
 
 h1{
 font-size:42px;
