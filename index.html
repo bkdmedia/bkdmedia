@@ -1,245 +1,960 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BKD GO | Pusat Link Resmi BKD Media</title>
-
-<meta name="description" content="BKD GO merupakan pusat link resmi BKD Media. Temukan YouTube, Website, TikTok, Instagram, Facebook dan seluruh tautan resmi dalam satu halaman.">
-
-<meta name="keywords" content="BKD GO, BKD Media, BKD Tutorials, Link Resmi, Tutorial Indonesia">
-
-<meta name="author" content="BKD Media">
-
-<meta property="og:title" content="BKD GO">
-<meta property="og:description" content="Pusat Link Resmi BKD Media">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://bkdgo.to">
-
-<link rel="icon" href="favicon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050b16">
+  <meta name="description" content="BKD Media — Media Informasi untuk Semua.">
+  <title>BKD Media — Media Informasi untuk Semua</title>
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+:root{
+  --bg:#050b16;
+  --bg2:#081526;
+  --surface:#0b1a2d;
+  --surface2:#0e2239;
+  --line:rgba(148,163,184,.14);
+  --text:#f5f8fc;
+  --muted:#91a4ba;
+  --blue:#168cff;
+  --blue2:#22b8ff;
+  --cyan:#31d4ff;
+  --max:1120px;
+  --r:22px;
 }
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-background:#081221;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:25px;
-color:#fff;
-overflow-x:hidden;
+  margin:0;color:var(--text);
+  background:
+    radial-gradient(600px 380px at 85% 0%,rgba(22,140,255,.13),transparent 65%),
+    radial-gradient(500px 320px at 0% 34%,rgba(0,104,220,.08),transparent 70%),
+    var(--bg);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.5;
+}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+.container{width:min(calc(100% - 28px),var(--max));margin:auto}
+
+/* HEADER */
+.header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(5,11,22,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.logo{width:45px;height:45px;object-fit:contain;flex:0 0 45px}
+.brand-text strong{display:block;font-size:16px;letter-spacing:-.2px}
+.brand-text span{display:block;color:var(--muted);font-size:10px;white-space:nowrap}
+.header-actions{display:flex;gap:7px}
+.header-btn{
+  width:39px;height:39px;border:1px solid var(--line);border-radius:12px;
+  background:rgba(13,31,51,.72);color:#dcecff;display:grid;place-items:center;cursor:pointer;
+}
+.desktop-nav{display:none}
+
+/* SECTION */
+.section{padding:24px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:13px}
+.section-title{margin:0;font-size:19px;letter-spacing:-.035em;display:flex;align-items:center;gap:8px}
+.section-title i{color:#4db7ff;font-size:16px}
+.view-all{font-size:10px;color:#63bfff;font-weight:800;white-space:nowrap}
+
+/* SOROTAN */
+.feature{
+  overflow:hidden;border:1px solid rgba(80,174,255,.15);border-radius:var(--r);
+  background:linear-gradient(145deg,rgba(13,34,57,.96),rgba(8,22,38,.96));
+  box-shadow:0 15px 45px rgba(0,0,0,.25);
+}
+.feature-media{
+  position:relative;min-height:190px;
+  background:
+    radial-gradient(circle at 68% 35%,rgba(42,180,255,.28),transparent 20%),
+    linear-gradient(135deg,#071729,#0d3153);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.feature-media:before{
+  content:"";position:absolute;width:180px;height:180px;border-radius:50%;
+  border:1px solid rgba(71,190,255,.22);box-shadow:0 0 55px rgba(22,140,255,.18);
+}
+.feature-art{
+  position:relative;z-index:1;text-align:center;font-weight:950;letter-spacing:-.06em;
+  text-shadow:0 0 25px rgba(31,172,255,.28);
+}
+.feature-art b{display:block;font-size:31px}
+.feature-art span{font-size:15px;color:#69c8ff}
+.duration{
+  position:absolute;right:9px;bottom:9px;z-index:3;padding:4px 7px;border-radius:7px;
+  background:rgba(0,0,0,.72);font-size:9px;font-weight:800;
+}
+.feature-body{padding:17px}
+.feature-tag{
+  display:inline-flex;padding:5px 8px;border-radius:7px;background:rgba(22,140,255,.12);
+  color:#6fc8ff;font-size:8px;font-weight:900;letter-spacing:.1em;
+}
+.feature h3{font-size:20px;line-height:1.15;letter-spacing:-.045em;margin:9px 0 7px}
+.feature p{font-size:11px;color:var(--muted);margin:0}
+.feature-meta{font-size:10px;color:#738aa2;margin-top:10px}
+.feature-actions{display:flex;gap:7px;margin-top:14px}
+
+/* SEARCH */
+.search-section{padding-top:6px}
+.search-box{
+  display:flex;align-items:center;gap:9px;
+  min-height:52px;padding:5px 6px 5px 15px;
+  background:rgba(7,21,36,.95);border:1px solid rgba(80,174,255,.20);
+  border-radius:16px;box-shadow:0 12px 32px rgba(0,0,0,.20);
+}
+.search-box i{color:#61beff;font-size:14px}
+.search-box input{flex:1;min-width:0;background:none;border:0;outline:0;color:#fff;font-size:13px}
+.search-box input::placeholder{color:#71869d}
+.search-submit{
+  height:40px;padding:0 13px;border:0;border-radius:11px;background:#147fdf;color:#fff;
+  font-size:10px;font-weight:900;cursor:pointer;
+}
+.search-results{display:none;margin-top:7px;border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#0a1b2e}
+.search-results.show{display:block}
+.result{display:flex;justify-content:space-between;gap:10px;padding:12px 13px;border-bottom:1px solid var(--line)}
+.result:last-child{border-bottom:0}
+.result small{display:block;color:#59baff;font-size:9px;margin-bottom:2px}
+.result strong{font-size:11px;line-height:1.3}
+.result i{color:#6bbfff}
+
+/* APPS — ONE ROW, HORIZONTAL SCROLL */
+.apps{display:flex;gap:9px;overflow-x:auto;overflow-y:hidden;padding:2px 2px 8px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.apps::-webkit-scrollbar{display:none}
+.app{flex:0 0 112px;min-height:108px;padding:12px 7px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#0d233b,#091a2d);scroll-snap-align:start}
+.app-icon{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;margin-bottom:7px;background:#112e4b;border:1px solid rgba(96,165,250,.13);color:#67c4ff;font-size:18px}
+.app strong{font-size:11px;white-space:nowrap}
+.app span{font-size:8px;color:#7f95ab;margin-top:2px;white-space:nowrap}
+
+
+/* SOROTAN — HORIZONTAL CAROUSEL, MAX 5 */
+.features-track{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:2px 2px 10px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.features-track::-webkit-scrollbar{display:none}
+
+.feature-dots{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+  margin-top:1px;
+}
+.feature-dots button{
+  width:6px;
+  height:6px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#52677d;
+  opacity:.7;
+  cursor:pointer;
+}
+.feature-dots button.active{
+  width:18px;
+  border-radius:5px;
+  background:#32a8ff;
+  opacity:1;
 }
 
-.background{
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at top,#2563eb33,transparent 50%),
-radial-gradient(circle at bottom,#0ea5e933,transparent 45%);
-z-index:-1;
+.features-track .feature{
+  flex:0 0 100%;
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+  min-width:0;
+  scroll-snap-align:start;
+}
+@media (min-width:700px){
+  .features-track .feature{flex:0 0 100%}
 }
 
-.card{
-width:100%;
-max-width:420px;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-backdrop-filter:blur(18px);
-border-radius:28px;
-padding:35px 28px;
-text-align:center;
-box-shadow:0 20px 60px rgba(0,0,0,.35);
-animation:fade .7s ease;
+
+/* APLIKASI POPULER — FULL-COLOR LOGO + PREMIUM CATEGORY */
+.app{
+  flex:0 0 112px;
+  min-height:118px;
+  padding:11px 7px 10px;
+}
+.app-icon{
+  width:52px;
+  height:52px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  margin-bottom:7px;
+  background:transparent;
+  border:0;
+  color:#fff;
+  font-size:18px;
+}
+.app-icon img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  display:block;
+}
+.logo-fallback{
+  width:48px;height:48px;border-radius:14px;
+  display:grid;place-items:center;
+  font-size:25px;font-weight:900;
+  color:#fff;
+  background:linear-gradient(145deg,#ef2b43,#9c1630);
+}
+.app strong{font-size:11px;white-space:nowrap}
+.app span{
+  font-size:8px;
+  color:#a9bacb;
+  margin-top:5px;
+  padding:3px 7px;
+  border:1px solid rgba(105,190,255,.22);
+  border-radius:6px;
+  white-space:nowrap;
+  line-height:1.1;
 }
 
-.logo{
-    width:125px;
-    height:125px;
-    margin:auto;
-    margin-bottom:18px;
-    display:flex;
+/* VIDEOS — RESPONSIVE HORIZONTAL CARD */
+.videos{display:grid;gap:10px}
+.video{padding:8px;border:1px solid var(--line);border-radius:17px;background:#0a1a2c;min-width:0;overflow:hidden}.video>a{display:grid;grid-template-columns:minmax(112px,34%) minmax(0,1fr);gap:12px;align-items:center;min-width:0}
+.video-thumb{position:relative;width:100%;aspect-ratio:16/10;border-radius:11px;overflow:hidden;background:linear-gradient(135deg,#0d3d6d,#071426);display:grid;place-items:center}
+.video-thumb:before{content:"";position:absolute;width:52px;height:52px;border-radius:50%;border:1px solid rgba(110,202,255,.3);box-shadow:0 0 30px rgba(22,140,255,.24)}
+.play{position:relative;z-index:2;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#168cff;font-size:11px}
+.video-duration{position:absolute;right:6px;bottom:6px;z-index:3;background:rgba(0,0,0,.75);padding:3px 5px;border-radius:5px;font-size:8px}
+.video-body{min-width:0;display:flex;flex-direction:column;justify-content:center}
+.video h3{font-size:13px;line-height:1.3;margin:0 0 8px;overflow-wrap:anywhere}
+.video-meta{font-size:9px;color:#8096ac;line-height:1.4}.video-meta b{color:#61bfff}
+
+/* ARTICLES — FINAL: 5 ITEMS, NO NUMBERS, NO THUMBNAILS */
+.articles{border-top:1px solid var(--line)}
+.article{min-height:62px;display:flex;align-items:center;gap:10px;padding:11px 2px;border-bottom:1px solid var(--line)}
+.article-icon{flex:0 0 30px;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;color:#5ebcff;background:rgba(22,140,255,.09);border:1px solid rgba(22,140,255,.10);font-size:13px}
+.article-main{min-width:0;flex:1}
+.article h3{margin:0;font-size:13px;line-height:1.32;overflow-wrap:anywhere}
+.article-meta{font-size:9px;color:#748ba3;margin-top:4px;line-height:1.35}.article-meta b{color:#61bfff}
+.article-arrow{flex:0 0 31px;width:31px;height:31px;border-radius:10px;display:grid;place-items:center;color:#67bfff;background:rgba(22,140,255,.09)}
+
+/* FOOTER */
+/* FOOTER — MINIMAL V1.3 */
+.footer{
+  margin-top:25px;
+  padding:22px 0 84px;
+  border-top:1px solid var(--line);
+  background:rgba(3,9,17,.58);
+}
+.footer-legal{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  color:#7f93a8;
+}
+.footer-legal a{
+  color:#9db0c3;
+  font-size:10px;
+}
+.footer-legal span{
+  color:#50647a;
+  font-size:9px;
+}
+.copyright{
+  margin-top:15px;
+  padding-top:13px;
+  border-top:1px solid var(--line);
+  text-align:center;
+  font-size:9px;
+  color:#61758a;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:120;
+  padding:7px 12px max(9px,env(safe-area-inset-bottom));
+  background:rgba(5,12,22,.94);backdrop-filter:blur(22px);
+  border-top:1px solid rgba(148,163,184,.14);
+  box-shadow:0 -12px 35px rgba(0,0,0,.22);
+}
+.bottom-inner{width:min(100%,520px);margin:auto;display:grid;grid-template-columns:repeat(5,1fr)}
+.bottom-link{display:grid;place-items:center;gap:3px;color:#71859b;font-size:8px;padding:4px 0}
+.bottom-link i{font-size:15px}
+.bottom-link.active{color:#5ebcff}
+
+/* TABLET / DESKTOP */
+@media(min-width:700px){
+  .container{width:min(calc(100% - 42px),var(--max))}
+  .desktop-nav{display:flex;gap:4px}
+  .desktop-nav a{font-size:11px;color:#91a5ba;padding:8px 10px;border-radius:9px}
+  .menu-btn{display:none}
+  .feature{display:grid;grid-template-columns:46% 54%}
+  .feature-media{min-height:280px}
+  .apps{overflow-x:auto}
+  .app{flex-basis:128px}
+  .video>a{grid-template-columns:180px minmax(0,1fr)}
+  .footer{padding-bottom:35px}
+  .bottom-nav{display:none}
+}
+
+
+/* SOROTAN — RESPONSIVE MOBILE */
+@media (min-width:360px) and (max-width:699px){
+  .feature{
+    display:grid;
+    grid-template-columns:minmax(0,45%) minmax(0,55%);
+    align-items:stretch;
+  }
+  .feature-media{
+    min-height:100%;
+    aspect-ratio:auto;
+  }
+  .feature-body{
+    padding:15px;
+    min-width:0;
+  }
+  .feature h3{font-size:16px}
+  .feature p{font-size:10px}
+  .feature-actions{flex-wrap:wrap}
+}
+@media (max-width:389px){
+  .feature{display:block}
+  .feature-media{min-height:190px}
+}
+
+@media(max-width:699px){.desktop-nav{display:none}}
+
+@media(max-width:699px){
+  body{padding-bottom:74px}
+  .bottom-nav{padding-left:8px;padding-right:8px}
+  .bottom-inner{grid-template-columns:repeat(5,minmax(0,1fr));}
+  .bottom-link{min-width:0;white-space:nowrap;padding:5px 1px 3px;font-size:8px;}
+  .bottom-link i{font-size:15px;line-height:16px}
+  .bottom-link span{overflow:hidden;text-overflow:ellipsis;max-width:100%;}
+}
+/* VIDEO TERBARU — RESPONSIVE */
+@media (min-width:390px) and (max-width:699px){
+  .video>a{
+    grid-template-columns:minmax(112px,38%) minmax(0,1fr);
+    gap:11px;
     align-items:center;
-    justify-content:center;
-}
-  
-.logo img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    filter:drop-shadow(0 0 18px rgba(37,99,235,.55));
-    animation:logoGlow 3s ease-in-out infinite;
-}
-
-@keyframes logoGlow{
-    0%,100%{
-        filter:drop-shadow(0 0 18px rgba(37,99,235,.45));
-    }
-    50%{
-        filter:drop-shadow(0 0 30px rgba(37,99,235,.75));
-    }
-} 
-
-h1{
-font-size:42px;
-font-weight:700;
-margin-bottom:10px;
+  }
+  .video-thumb{
+    aspect-ratio:16/10;
+  }
+  .video-body{
+    min-width:0;
+    padding:2px 3px 2px 0;
+  }
+  .video h3{
+    font-size:13px;
+    line-height:1.28;
+    margin-bottom:7px;
+  }
+  .video-meta{
+    font-size:9px;
+  }
 }
 
-.subtitle{
-color:#cbd5e1;
-font-size:16px;
-margin-bottom:30px;
+@media (max-width:359px){
+  .video>a{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .video-thumb{
+    aspect-ratio:16/9;
+  }
+  .video-body{
+    padding:0 2px 4px;
+  }
+  .video h3{
+    font-size:12px;
+    line-height:1.3;
+  }
+  .video-meta{
+    font-size:8px;
+  }
+}
+@media(max-width:360px){
+  .bottom-link{font-size:7px}
+  .bottom-link i{font-size:14px}
+  .bottom-nav{padding-left:4px;padding-right:4px}
 }
 
-.btn{
-display:block;
-text-decoration:none;
-background:linear-gradient(135deg,#2563eb,#0ea5e9);
-color:#fff;
-padding:17px;
-margin:14px 0;
-border-radius:16px;
-font-size:18px;
-font-weight:bold;
-transition:.3s;
-box-shadow:0 8px 18px rgba(37,99,235,.35);
+.sr-only{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
 }
 
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 14px 28px rgba(37,99,235,.45);
+
+/* SOROTAN — FINAL VERTICAL FEATURE CARD */
+.features-track .feature{
+  flex:0 0 88%;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.features-track .feature-media{
+  width:100%;
+  aspect-ratio:16/9;
+  min-height:0;
+  border-radius:0;
+}
+.features-track .feature-body{
+  padding:15px 16px 16px;
+}
+.features-track .feature h3{
+  font-size:18px;
+  line-height:1.2;
+  margin:8px 0 7px;
+}
+.features-track .feature p{
+  font-size:11px;
+  line-height:1.5;
+  margin:0 0 8px;
+}
+.features-track .feature .feature-meta{
+  font-size:9px;
+  margin-bottom:12px;
+}
+.features-track .feature .feature-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.features-track .feature .btn{
+  min-height:38px;
+  padding:9px 12px;
+  font-size:11px;
+}
+@media (max-width:359px){
+  .features-track .feature{flex-basis:100%}
+  .features-track .feature h3{font-size:16px}
+  .features-track .feature-body{padding:13px 14px 14px}
+}
+@media (min-width:700px){
+  .features-track .feature{flex:0 0 720px}
 }
 
-.btn:active{
-transform:scale(.98);
+
+/* SOROTAN — NO DESCRIPTION */
+.features-track .feature-body{
+  padding:14px 16px 15px;
+}
+.features-track .feature h3{
+  margin:7px 0 8px;
+}
+.features-track .feature .feature-meta{
+  margin-bottom:10px;
 }
 
-footer{
-margin-top:28px;
-color:#94a3b8;
-font-size:14px;
+
+/* FOOTER — FINAL COMPACT */
+.site-footer{
+  padding:28px 20px 18px !important;
+}
+.site-footer .footer-brand{
+  margin-bottom:14px !important;
+}
+.site-footer .footer-brand p,
+.site-footer .footer-description{
+  margin:4px 0 0 !important;
+}
+.site-footer .footer-links{
+  margin:14px 0 !important;
+  padding:12px 0 !important;
+}
+.site-footer .footer-bottom{
+  padding-top:12px !important;
+  margin-top:0 !important;
 }
 
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
 
-@media(max-width:480px){
-
-.card{
-padding:28px 20px;
+/* BKD MEDIA — SOROTAN FINAL CAROUSEL: ONE FULL CARD PER SLIDE */
+.features-track{
+  gap:12px;
+  scroll-snap-type:x mandatory;
+  overflow-x:auto;
+  overflow-y:hidden;
+  touch-action:pan-x;
 }
-
-h1{
-font-size:34px;
-}
-
-.logo{
-width:82px;
-height:82px;
-font-size:38px;
-}
-
-.btn{
-font-size:17px;
-padding:16px;
-}
-
+.features-track .feature,
+.features-track .feature{
+  flex:0 0 100% !important;
+  width:100% !important;
+  min-width:100% !important;
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="background"></div>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="#home">
+      <img class="logo" src="logo.svg" alt="BKD Media">
+      <div class="brand-text">
+        <span class="sr-only">BKD Media</span>
+        <span>Media Informasi untuk Semua</span>
+      </div>
+    </a>
 
-<div class="card">
+    <nav class="desktop-nav">
+      <a href="#apps">Aplikasi</a>
+      <a href="#videos">Video</a>
+      <a href="#articles">Artikel</a>
+      <a href="#footer">Tentang</a>
+    </nav>
 
-<div class="logo">
-    <img src="logo.svg" alt="BKD Media Logo">
-</div>
+    <div class="header-actions">
+      <button class="header-btn menu-btn" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
 
-<h1>BKD GO</h1>
+<main id="home">
 
-<p class="subtitle">
-Pusat Link Resmi BKD Media
-</p>
+  <!-- 2. SEARCH — DI BAWAH HEADER -->
+  <section id="search" class="section search-section">
+    <div class="container">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="searchInput" type="search"
+          placeholder="Cari artikel, video, atau aplikasi..."
+          autocomplete="off">
+        <button class="search-submit" onclick="searchBKD()">Cari</button>
+      </div>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </section>
 
-<a class="btn" href="https://youtube.com/@BKDTutorials" target="_blank">
-<i class="fa-brands fa-youtube"></i> YouTube
-</a>
 
-<a class="btn" href="https://www.bkdtutorials.com" target="_blank">
-<i class="fa-solid fa-globe"></i> Website
-</a>
+  <!-- 1. SOROTAN MINGGU INI -->
+  <section id="highlight" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">
+          <i class="fa-solid fa-star"></i> Sorotan Minggu Ini
+        </h2>
+      </div>
 
-<a class="btn" href="https://tiktok.com/@bkdtutorials" target="_blank">
-<i class="fa-brands fa-tiktok"></i> TikTok
-</a>
+      <div class="features-track" aria-label="Sorotan Minggu Ini">
+        <article class="feature">
+          <div class="feature-media">
+            <div class="feature-art">
+              <b>TOP UP</b>
+              <span>TIKTOK COINS</span>
+              <b>MURAH &amp; AMAN</b>
+            </div>
+            <span class="duration">08:35</span>
+          </div>
+          <div class="feature-body">
+            <span class="feature-tag">VIDEO PILIHAN BKD</span>
+            <h3>Cara Top Up TikTok Coins Murah &amp; Aman 2026</h3>
+            <div class="feature-meta"><i class="fa-brands fa-youtube"></i> BKD Tutorials · 2 jam lalu</div>
+            <div class="feature-actions">
+              <a class="btn btn-primary" href="#"><i class="fa-solid fa-play"></i> Tonton Sekarang</a>
+              <a class="btn btn-secondary" href="#"><i class="fa-regular fa-file-lines"></i> Baca Artikel</a>
+            </div>
+          </div>
+        </article>
 
-<a class="btn" href="https://www.instagram.com/bkdtutorials">
-<i class="fa-brands fa-instagram"></i> Instagram
-</a>
+        <article class="feature">
+          <div class="feature-media">
+            <div class="feature-art">
+              <b>DANA</b>
+              <span>GRATIS BIAYA</span>
+              <b>TRANSFER</b>
+            </div>
+            <span class="duration">05:48</span>
+          </div>
+          <div class="feature-body">
+            <span class="feature-tag">VIDEO PILIHAN BKD</span>
+            <h3>Cara Top Up DANA Gratis Biaya Terbaru</h3>
+            <p>Temukan cara praktis melakukan top up DANA dengan biaya lebih hemat.</p>
+            <div class="feature-meta"><i class="fa-brands fa-youtube"></i> BKD Tutorials · 2 jam lalu</div>
+            <div class="feature-actions">
+              <a class="btn btn-primary" href="#"><i class="fa-solid fa-play"></i> Tonton Sekarang</a>
+              <a class="btn btn-secondary" href="#"><i class="fa-regular fa-file-lines"></i> Baca Artikel</a>
+            </div>
+          </div>
+        </article>
 
-<a class="btn" href="https://www.facebook.com/bkdtutorials">
-<i class="fa-brands fa-facebook-f"></i> Facebook
-</a>
+        <article class="feature">
+          <div class="feature-media">
+            <div class="feature-art">
+              <b>GOPAY</b>
+              <span>PAYLATER</span>
+              <b>TERBARU</b>
+            </div>
+            <span class="duration">06:12</span>
+          </div>
+          <div class="feature-body">
+            <span class="feature-tag">VIDEO PILIHAN BKD</span>
+            <h3>Cara Aktifkan GoPay PayLater Terbaru</h3>
+            <p>Panduan langkah demi langkah untuk mengaktifkan fitur GoPay PayLater.</p>
+            <div class="feature-meta"><i class="fa-brands fa-youtube"></i> ORB7 · 5 jam lalu</div>
+            <div class="feature-actions">
+              <a class="btn btn-primary" href="#"><i class="fa-solid fa-play"></i> Tonton Sekarang</a>
+              <a class="btn btn-secondary" href="#"><i class="fa-regular fa-file-lines"></i> Baca Artikel</a>
+            </div>
+          </div>
+        </article>
 
-<a class="btn" href="https://t.me/idrusd">
-<i class="fa-brands fa-telegram"></i> Telegram
-</a>
+        <article class="feature">
+          <div class="feature-media">
+            <div class="feature-art">
+              <b>TIKTOK</b>
+              <span>COINS</span>
+              <b>HEMAT</b>
+            </div>
+            <span class="duration">05:48</span>
+          </div>
+          <div class="feature-body">
+            <span class="feature-tag">VIDEO PILIHAN BKD</span>
+            <h3>Cara Beli TikTok Coins Termurah &amp; Aman</h3>
+            <p>Informasi dan panduan membeli TikTok Coins dengan cara yang aman.</p>
+            <div class="feature-meta"><i class="fa-brands fa-youtube"></i> BKD Tutorials · 2 jam lalu</div>
+            <div class="feature-actions">
+              <a class="btn btn-primary" href="#"><i class="fa-solid fa-play"></i> Tonton Sekarang</a>
+              <a class="btn btn-secondary" href="#"><i class="fa-regular fa-file-lines"></i> Baca Artikel</a>
+            </div>
+          </div>
+        </article>
 
-<footer>
+        <article class="feature">
+          <div class="feature-media">
+            <div class="feature-art">
+              <b>SEABANK</b>
+              <span>REKENING</span>
+              <b>ONLINE</b>
+            </div>
+            <span class="duration">07:15</span>
+          </div>
+          <div class="feature-body">
+            <span class="feature-tag">VIDEO PILIHAN BKD</span>
+            <h3>Cara Buka Rekening SeaBank Online</h3>
+            <p>Panduan membuka rekening SeaBank secara online dengan mudah.</p>
+            <div class="feature-meta"><i class="fa-brands fa-youtube"></i> BKD Tutorials · 7 menit lalu</div>
+            <div class="feature-actions">
+              <a class="btn btn-primary" href="#"><i class="fa-solid fa-play"></i> Tonton Sekarang</a>
+              <a class="btn btn-secondary" href="#"><i class="fa-regular fa-file-lines"></i> Baca Artikel</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="feature-dots" aria-label="Navigasi Sorotan Minggu Ini">
+        <button class="active" aria-label="Sorotan 1"></button>
+        <button aria-label="Sorotan 2"></button>
+        <button aria-label="Sorotan 3"></button>
+        <button aria-label="Sorotan 4"></button>
+        <button aria-label="Sorotan 5"></button>
+      </div>
+    </div>
+  </section>
 
-© 2026 BKD Media
+  <!-- 4. APLIKASI POPULER — HORIZONTAL SCROLL -->
+  <section id="apps" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">
+          <i class="fa-solid fa-fire"></i> Aplikasi Populer
+        </h2>
+        <a class="view-all" href="#">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
 
+      <div class="apps" aria-label="Aplikasi Populer">
+        <a class="app" href="#">
+          <div class="app-icon"><img src="https://cdn.simpleicons.org/gopay" alt="GoPay"></div>
+          <strong>GoPay</strong><span>E-Wallet</span>
+        </a>
+        <a class="app" href="#">
+          <div class="app-icon"><img src="https://cdn.simpleicons.org/dana" alt="DANA"></div>
+          <strong>DANA</strong><span>E-Wallet</span>
+        </a>
+        <a class="app" href="#">
+          <div class="app-icon"><img src="https://cdn.simpleicons.org/seabank" alt="SeaBank"></div>
+          <strong>SeaBank</strong><span>Bank Digital</span>
+        </a>
+        <a class="app" href="#">
+          <div class="app-icon"><img src="https://cdn.simpleicons.org/tiktok" alt="TikTok"></div>
+          <strong>TikTok Coins</strong><span>Top Up</span>
+        </a>
+        <a class="app" href="#">
+          <div class="app-icon"><span class="logo-fallback">R</span></div>
+          <strong>Rewardo</strong><span>Rewards</span>
+        </a>
+        <a class="app" href="#">
+          <div class="app-icon"><span class="logo-fallback">M</span></div>
+          <strong>MOVA Cashback</strong><span>Cashback</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. VIDEO TERBARU — THUMBNAIL KIRI, INFO KANAN -->
+  <section id="videos" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">
+          <i class="fa-solid fa-circle-play"></i> Video Terbaru
+        </h2>
+        <a class="view-all" href="#">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+
+      <div class="videos">
+
+        <article class="video">
+          <a href="#">
+            <div class="video-thumb">
+              <span class="play"><i class="fa-solid fa-play"></i></span>
+              <span class="video-duration">05:48</span>
+            </div>
+            <div class="video-body">
+              <h3>Cara Top Up DANA via Bank BCA</h3>
+              <div class="video-meta"><b>BKD Tutorials</b> · 2 jam lalu</div>
+            </div>
+          </a>
+        </article>
+
+        <article class="video">
+          <a href="#">
+            <div class="video-thumb">
+              <span class="play"><i class="fa-solid fa-play"></i></span>
+              <span class="video-duration">06:12</span>
+            </div>
+            <div class="video-body">
+              <h3>Cara Aktifkan GoPay PayLater Terbaru</h3>
+              <div class="video-meta"><b>ORB7</b> · 5 jam lalu</div>
+            </div>
+          </a>
+        </article>
+
+        <article class="video">
+          <a href="#">
+            <div class="video-thumb">
+              <span class="play"><i class="fa-solid fa-play"></i></span>
+              <span class="video-duration">05:48</span>
+            </div>
+            <div class="video-body">
+              <h3>Cara Beli TikTok Coins Termurah &amp; Aman</h3>
+              <div class="video-meta"><b>BKD Tutorials</b> · 2 jam lalu</div>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. ARTIKEL TERBARU — 5 ITEM, TANPA NOMOR/THUMBNAIL -->
+  <section id="articles" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">
+          <i class="fa-regular fa-newspaper"></i> Artikel Terbaru
+        </h2>
+        <a class="view-all" href="#">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+
+      <div class="articles">
+        <a class="article" href="#">
+          <span class="article-icon"><i class="fa-regular fa-file-lines"></i></span>
+          <div class="article-main">
+            <h3>Cara Top Up DANA Gratis Biaya Terbaru</h3>
+            <div class="article-meta"><b>BKDTutorials.com</b> · Artikel · 2 jam lalu</div>
+          </div>
+          <span class="article-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+        <a class="article" href="#">
+          <span class="article-icon"><i class="fa-regular fa-file-lines"></i></span>
+          <div class="article-main">
+            <h3>Cara Beli TikTok Coins Murah dan Aman</h3>
+            <div class="article-meta"><b>BKDTutorials.com</b> · Artikel · 5 jam lalu</div>
+          </div>
+          <span class="article-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+        <a class="article" href="#">
+          <span class="article-icon"><i class="fa-regular fa-file-lines"></i></span>
+          <div class="article-main">
+            <h3>Doa Sebelum Tidur dan Artinya Lengkap</h3>
+            <div class="article-meta"><b>Doalova</b> · Artikel · 1 hari lalu</div>
+          </div>
+          <span class="article-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+        <a class="article" href="#">
+          <span class="article-icon"><i class="fa-regular fa-file-lines"></i></span>
+          <div class="article-main">
+            <h3>Informasi dan Artikel Terbaru untuk Anda</h3>
+            <div class="article-meta"><b>Artikelova</b> · Artikel · 1 hari lalu</div>
+          </div>
+          <span class="article-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+        <a class="article" href="#">
+          <span class="article-icon"><i class="fa-regular fa-file-lines"></i></span>
+          <div class="article-main">
+            <h3>Tutorial dan Informasi Digital Terbaru</h3>
+            <div class="article-meta"><b>BKD Media</b> · Artikel · 2 hari lalu</div>
+          </div>
+          <span class="article-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 6. FOOTER — MINIMALIS -->
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <span>•</span>
+      <a href="#">Terms of Use</a>
+    </div>
+
+    <div class="copyright">
+      © 2026 BKD Media. All Rights Reserved.
+    </div>
+  </div>
 </footer>
 
-</div>
+<!-- MOBILE BOTTOM NAVIGATION — 5 MENU -->
+<nav class="bottom-nav" aria-label="Navigasi utama">
+  <div class="bottom-inner">
+
+    <a class="bottom-link active" href="#home">
+      <i class="fa-solid fa-house"></i>
+      <span>Beranda</span>
+    </a>
+
+    <a class="bottom-link" href="#videos">
+      <i class="fa-solid fa-circle-play"></i>
+      <span>Video</span>
+    </a>
+
+    <a class="bottom-link" href="#articles">
+      <i class="fa-regular fa-newspaper"></i>
+      <span>Artikel</span>
+    </a>
+
+    <a class="bottom-link" href="#apps">
+      <i class="fa-solid fa-grid-2"></i>
+      <span>Aplikasi</span>
+    </a>
+
+    <a class="bottom-link" href="#search" onclick="focusSearch(); return false;">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <span>Search</span>
+    </a>
+
+  </div>
+</nav>
 
 <script>
+const data = [
+  {type:"Video · BKD Tutorials", title:"Cara Top Up DANA via Bank BCA"},
+  {type:"Video · ORB7", title:"Cara Aktifkan GoPay PayLater Terbaru"},
+  {type:"Video · BKD Tutorials", title:"Cara Beli TikTok Coins Termurah & Aman"},
+  {type:"Artikel · BKDTutorials.com", title:"Cara Top Up DANA Gratis Biaya Terbaru"},
+  {type:"Artikel · Doalova", title:"Doa Sebelum Tidur dan Artinya Lengkap"},
+  {type:"Artikel · Artikelova", title:"Informasi dan Artikel Terbaru untuk Anda"}
+];
 
-document.querySelectorAll(".btn").forEach(button=>{
+const input=document.getElementById("searchInput");
+const results=document.getElementById("searchResults");
 
-button.addEventListener("click",function(){
+function focusSearch(){
+  document.getElementById("search").scrollIntoView({behavior:"smooth",block:"start"});
+  setTimeout(()=>input.focus(),350);
+}
 
-button.style.transform="scale(.96)";
+function searchBKD(){
+  const q=input.value.trim().toLowerCase();
+  if(!q){results.classList.remove("show");return}
+  const found=data.filter(x=>(x.type+" "+x.title).toLowerCase().includes(q));
+  results.innerHTML=found.length
+    ? found.slice(0,6).map(x=>`
+      <a class="result" href="#">
+        <div><small>${x.type}</small><strong>${x.title}</strong></div>
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>`).join("")
+    : `<div class="result"><div><strong>Tidak ada hasil.</strong><small>Coba kata kunci lain.</small></div></div>`;
+  results.classList.add("show");
+}
 
-setTimeout(()=>{
+input.addEventListener("keydown",e=>{if(e.key==="Enter")searchBKD()});
+input.addEventListener("input",()=>{if(!input.value.trim())results.classList.remove("show")});
 
-button.style.transform="scale(1)";
+let featurePointerDown = false;
+let featureStartX = 0;
+let featureStartScroll = 0;
+if (featureTrack) {
+  featureTrack.addEventListener('pointerdown', e => {
+    featurePointerDown = true;
+    featureStartX = e.clientX;
+    featureStartScroll = featureTrack.scrollLeft;
+    featureTrack.setPointerCapture?.(e.pointerId);
+  });
+  featureTrack.addEventListener('pointermove', e => {
+    if (!featurePointerDown) return;
+    featureTrack.scrollLeft = featureStartScroll - (e.clientX - featureStartX);
+  });
+  featureTrack.addEventListener('pointerup', () => featurePointerDown = false);
+  featureTrack.addEventListener('pointercancel', () => featurePointerDown = false);
+}
 
-},150);
-
-});
-
-});
-
-document.title="BKD GO | Pusat Link Resmi BKD Media";
-
-console.log("BKD GO Loaded Successfully");
+const featureTrack = document.querySelector('.features-track');
+const featureDots = document.querySelectorAll('.feature-dots button');
+if (featureTrack && featureDots.length) {
+  const updateFeatureDots = () => {
+    const cards = featureTrack.querySelectorAll('.feature');
+    let index = 0;
+    let nearest = Infinity;
+    cards.forEach((card, i) => {
+      const distance = Math.abs(featureTrack.scrollLeft - card.offsetLeft);
+      if (distance < nearest) {
+        nearest = distance;
+        index = i;
+      }
+    });
+    featureDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  };
+  featureTrack.addEventListener('scroll', updateFeatureDots, {passive:true});
+  featureDots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      const card = featureTrack.querySelectorAll('.feature')[i];
+      if (card) featureTrack.scrollTo({left: card.offsetLeft, behavior:'smooth'});
+    });
+  });
+}
 
 </script>
-
 </body>
 </html>
