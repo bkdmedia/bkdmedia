@@ -878,14 +878,49 @@ button,input{font:inherit}
 </nav>
 
 <script>
-const data = [
-  {type:"Video · BKD Tutorials", title:"Cara Top Up DANA via Bank BCA"},
-  {type:"Video · ORB7", title:"Cara Aktifkan GoPay PayLater Terbaru"},
-  {type:"Video · BKD Tutorials", title:"Cara Beli TikTok Coins Termurah & Aman"},
-  {type:"Artikel · BKDTutorials.com", title:"Cara Top Up DANA Gratis Biaya Terbaru"},
-  {type:"Artikel · Doalova", title:"Doa Sebelum Tidur dan Artinya Lengkap"},
-  {type:"Artikel · Artikelova", title:"Informasi dan Artikel Terbaru untuk Anda"}
-];
+const API_URL = "https://bkdm-yt-api.anu1946store.workers.dev/videos";
+
+let data = [];
+
+async function loadVideoData() {
+  try {
+    const response = await fetch(API_URL);
+
+    if (!response.ok) {
+      throw new Error("API gagal diakses");
+    }
+
+    const result = await response.json();
+
+    if (!result.success || !Array.isArray(result.videos)) {
+      throw new Error("Format data API tidak valid");
+    }
+
+    data = result.videos.map(video => ({
+      type: "Video · " + video.channel,
+      title: video.title,
+      description: video.description,
+      thumbnail: video.thumbnail,
+      views: video.views,
+      likes: video.likes,
+      url: video.url,
+      publishedAt: video.publishedAt,
+      channel: video.channel,
+      channelId: video.channelId,
+      videoId: video.videoId
+    }));
+
+    console.log("Data video berhasil dimuat:", data);
+
+    // Jalankan fungsi tampilan setelah data API tersedia
+    renderData();
+
+  } catch (error) {
+    console.error("Gagal mengambil data video:", error);
+  }
+}
+
+loadVideoData();
 
 const input=document.getElementById("searchInput");
 const results=document.getElementById("searchResults");
