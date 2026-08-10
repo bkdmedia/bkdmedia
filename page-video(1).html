@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050b16">
+<meta name="description" content="Video terbaru BKD Media — tutorial, informasi, dan video pilihan dari ekosistem BKD Media.">
+<title>Video — BKD Media</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+:root{--bg:#050b16;--surface:#0a1a2c;--surface2:#0d2239;--line:rgba(148,163,184,.14);--text:#f5f8fc;--muted:#91a4ba;--blue:#168cff;--cyan:#31d4ff;--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);background:radial-gradient(600px 380px at 85% 0%,rgba(22,140,255,.13),transparent 65%),radial-gradient(500px 320px at 0% 34%,rgba(0,104,220,.08),transparent 70%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}a{text-decoration:none;color:inherit}button,input{font:inherit}.container{width:min(calc(100% - 28px),var(--max));margin:auto}
+.header{position:sticky;top:0;z-index:100;background:rgba(5,11,22,.84);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.header-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px;min-width:0}.logo{width:45px;height:45px;object-fit:contain;flex:0 0 45px}.brand-text span{display:block;color:var(--muted);font-size:10px;white-space:nowrap}.header-btn{width:39px;height:39px;border:1px solid var(--line);border-radius:12px;background:rgba(13,31,51,.72);color:#dcecff;display:grid;place-items:center;cursor:pointer}.desktop-nav{display:none}
+.page{padding:26px 0 30px}.eyebrow{display:inline-flex;align-items:center;gap:7px;color:#63bfff;font-size:10px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.page-title{margin:10px 0 7px;font-size:clamp(30px,8vw,48px);line-height:1;letter-spacing:-.055em}.page-title span{color:#53b8ff}.page-copy{margin:0;color:#8fa4ba;font-size:12px;max-width:620px}
+.toolbar{margin-top:22px;display:flex;gap:8px;align-items:center;overflow:auto;scrollbar-width:none;padding-bottom:2px}.toolbar::-webkit-scrollbar{display:none}.filter{flex:0 0 auto;border:1px solid var(--line);background:#0a1b2e;color:#91a4ba;border-radius:999px;padding:8px 13px;font-size:10px;font-weight:800;cursor:pointer}.filter.active{background:rgba(22,140,255,.14);border-color:rgba(80,174,255,.3);color:#69c8ff}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:28px 0 12px}.section-title{margin:0;font-size:19px;letter-spacing:-.035em;display:flex;align-items:center;gap:8px}.section-title i{color:#4db7ff;font-size:16px}.result-count{font-size:9px;color:#6f859b}
+.videos{display:grid;gap:10px}.video{display:grid;grid-template-columns:132px minmax(0,1fr);gap:12px;padding:8px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#0b1d31,#081728);transition:.2s}.video:hover{border-color:rgba(80,174,255,.28);transform:translateY(-1px)}.video-thumb{position:relative;aspect-ratio:16/10;border-radius:11px;overflow:hidden;background:linear-gradient(135deg,#0d3d6d,#071426);display:grid;place-items:center}.video-thumb img + .play{z-index:3}.video-thumb:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(30,156,255,.18),transparent 48%)}.video-thumb b{position:relative;z-index:1;font-size:13px;line-height:1.05;text-align:center;letter-spacing:-.04em}.video-thumb b span{display:block;color:#61c5ff;font-size:8px;margin:3px 0}.play{position:absolute;z-index:3;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#168cff;box-shadow:0 0 0 1px rgba(110,202,255,.28),0 0 28px rgba(22,140,255,.25);font-size:12px;left:50%;top:50%;transform:translate(-50%,-50%)}.duration{position:absolute;right:6px;bottom:6px;z-index:4;background:rgba(0,0,0,.78);padding:3px 5px;border-radius:5px;font-size:8px;font-weight:800}.video-body{min-width:0;display:flex;flex-direction:column;justify-content:center;padding:2px 3px 2px 0}.video h3{font-size:14px;line-height:1.27;letter-spacing:-.025em;margin:0 0 7px}.video-meta{font-size:9px;color:#71879d}.video-meta b{color:#61bfff}.video-actions{display:flex;gap:7px;margin-top:10px}.watch{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:800;color:#69c8ff}.watch i{font-size:8px}
+.empty{display:none;text-align:center;padding:28px 16px;border:1px dashed var(--line);border-radius:17px;color:#72869b;font-size:11px}
+.footer{margin-top:34px;padding:20px 0 84px;border-top:1px solid var(--line);background:rgba(3,9,17,.58)}.footer-simple{display:flex;align-items:center;justify-content:space-between;gap:18px;color:#71869e;font-size:10px}.footer-right{display:flex;align-items:center;gap:7px}.footer-right a{color:#91a5ba}.footer-right a:hover{color:#fff}.footer-right>span{color:#50647a}
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:120;padding:7px 12px max(9px,env(safe-area-inset-bottom));background:rgba(5,12,22,.94);backdrop-filter:blur(22px);border-top:1px solid rgba(148,163,184,.14);box-shadow:0 -12px 35px rgba(0,0,0,.22)}.bottom-inner{width:min(100%,520px);margin:auto;display:grid;grid-template-columns:repeat(5,1fr)}.bottom-link{display:grid;place-items:center;gap:4px;color:#71859b;font-size:9px;padding:5px 0;min-height:54px}.bottom-link i{font-size:17px}.bottom-link.active{color:#5ebcff}
+@media(min-width:700px){.container{width:min(calc(100% - 42px),var(--max))}.desktop-nav{display:flex;gap:4px}.desktop-nav a{font-size:11px;color:#91a5ba;padding:8px 10px;border-radius:9px}.page{padding-top:42px}.videos{grid-template-columns:repeat(3,1fr);gap:14px}.video{display:block;padding:0;overflow:hidden}.video-thumb{border-radius:0;aspect-ratio:16/9}.video-body{padding:13px}.video h3{font-size:14px}.video-actions{margin-bottom:2px}.bottom-nav{display:none}.footer{padding-bottom:35px}}
+@media(max-width:699px){.desktop-nav{display:none}.bottom-nav{display:block}body{padding-bottom:74px}}
+@media(max-width:389px){.container{width:min(calc(100% - 22px),var(--max))}.video{grid-template-columns:112px minmax(0,1fr);gap:10px}.video h3{font-size:12px}.video-meta{font-size:8px}.video-actions{margin-top:7px}.footer-simple{font-size:9px;gap:10px}.footer-right{gap:5px}}
+
+/* BKD MEDIA — PUBLISHER PROFILE */
+.video-meta{display:flex;align-items:center;gap:5px;font-size:10px;line-height:1.2}
+.publisher-avatar{width:14px;height:14px;flex:0 0 14px;border-radius:50%;object-fit:cover;background:#103455;border:1px solid rgba(82,190,255,.28)}
+.publisher-fallback{width:14px;height:14px;flex:0 0 14px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#123b60,#0a2239);border:1px solid rgba(82,190,255,.28);color:#61c5ff;font-size:8px;font-weight:800}
+/* Infinite video list */
+.video-loading{display:none;text-align:center;padding:18px 0 8px;color:#6f879f;font-size:10px}
+.video-loading.show{display:block}
+
+
+/* VIDEO HEADER — MATCH HOMEPAGE */
+.site-header .header-search,
+.site-header .search-btn,
+.site-header .header-actions .search,
+.site-header [data-header-search]{
+  display:none !important;
+}
+
+
+/* VIDEO HEADER — MOBILE MATCH HOMEPAGE */
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.menu-toggle{
+  width:42px;height:42px;flex:0 0 42px;
+  border:1px solid rgba(91,166,219,.22);
+  border-radius:12px;
+  background:#0d2034;
+  color:#d9edff;
+  display:grid;
+  place-items:center;
+  font-size:17px;
+  cursor:pointer;
+}
+@media(min-width:760px){
+  .menu-toggle{display:none}
+}
+
+
+@media(max-width:759px){
+  .desktop-nav.mobile-open{
+    display:flex;
+    position:absolute;
+    top:100%;
+    right:14px;
+    flex-direction:column;
+    min-width:150px;
+    padding:8px;
+    background:#071522;
+    border:1px solid rgba(91,166,219,.2);
+    border-radius:12px;
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+    z-index:50;
+  }
+  .desktop-nav.mobile-open a{
+    padding:9px 10px;
+    border-radius:8px;
+  }
+}
+
+.section-title .fa-fire{color:#4db8ff}
+
+</style>
+</head>
+<body>
+<header class="header"><div class="container header-inner">
+<a class="brand" href="index.html" aria-label="BKD Media"><img class="logo" src="logo.svg" alt="BKD Media"><div class="brand-text"><span>Media Informasi untuk Semua</span></div></a>
+<nav class="desktop-nav" aria-label="Navigasi utama"><a href="index.html">Beranda</a><a href="page-video.html" style="color:#63bfff">Video</a><a href="artikel.html">Artikel</a><a href="aplikasi.html">Aplikasi</a></nav>
+<button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false">
+  <i class="fa-solid fa-bars"></i>
+</button>
+</div></header>
+
+<main class="page"><div class="container">
+<div class="eyebrow"><i class="fa-solid fa-circle-play"></i> BKD Media</div>
+<h1 class="page-title" id="pageTitle">Video <span>Terbaru</span></h1>
+<p class="page-copy" id="pageDescription">Temukan video tutorial, informasi, dan konten terbaru dari ekosistem BKD Media dalam satu tempat.</p>
+
+<div class="toolbar" aria-label="Filter sumber video">
+<button class="filter active" data-filter="all">Semua Video</button>
+<button class="filter" data-filter="bkd">BKD Tutorials</button>
+<button class="filter" data-filter="orb7">ORB7</button>
+</div>
+
+
+<div class="section-head">
+  <h2 class="section-title"><i class="fa-solid fa-play"></i> Video Terbaru</h2>
+  <span class="result-count" id="resultCount">128 video</span>
+</div>
+<div class="videos" id="videos"></div>
+<div class="video-loading" id="videoLoading">Memuat video berikutnya…</div>
+<div class="video-loading" id="videoEnd">Semua video telah ditampilkan.</div>
+<div class="empty" id="empty">Belum ada video untuk sumber ini.</div>
+</div></main>
+
+<footer class="footer"><div class="container"><div class="footer-simple"><span>© 2026 BKD Media</span><span class="footer-right"><a href="/privacy-policy">Privacy Policy</a><span>·</span><a href="/terms">Terms</a></span></div></div></footer>
+<nav class="bottom-nav" aria-label="Navigasi utama"><div class="bottom-inner"><a class="bottom-link" href="index.html"><i class="fa-solid fa-house"></i><span>Beranda</span></a><a class="bottom-link active" href="page-video.html"><i class="fa-solid fa-circle-play"></i><span>Video</span></a><a class="bottom-link" href="index.html#search"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></a><a class="bottom-link" href="artikel.html"><i class="fa-regular fa-newspaper"></i><span>Artikel</span></a><a class="bottom-link" href="aplikasi.html"><i class="fa-solid fa-table-cells-large"></i><span>Aplikasi</span></a></div></nav>
+<script>
+const API_URL = "https://bkdm-yt-api.anu1946store.workers.dev/videos";
+const LIMIT = 24;
+
+const buttons=[...document.querySelectorAll('.filter[data-filter]')];
+const list=document.getElementById('videos');
+const count=document.getElementById('resultCount');
+const empty=document.getElementById('empty');
+const loading=document.getElementById('videoLoading');
+const videoEnd=document.getElementById('videoEnd');
+
+const state={
+  filter:"all",
+  q:"",
+  page:1,
+  total:0,
+  totalPages:1,
+  loading:false
+};
+
+function esc(value){
+  return String(value ?? "")
+    .replaceAll("&","&amp;").replaceAll("<","&lt;")
+    .replaceAll(">","&gt;").replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function formatViews(n){
+  n=Number(n||0);
+  if(n>=1000000) return (n/1000000).toFixed(n%1000000===0?0:1).replace(".",",")+" jt views";
+  if(n>=1000) return (n/1000).toFixed(n%1000===0?0:1).replace(".",",")+" rb views";
+  return n+" views";
+}
+
+function formatDate(value){
+  if(!value) return "";
+  const d=new Date(value);
+  if(Number.isNaN(d.getTime())) return "";
+  return new Intl.DateTimeFormat("id-ID",{day:"numeric",month:"short",year:"numeric"}).format(d);
+}
+
+function getVideoUrl(video){
+  if(video.url) return video.url;
+  if(video.videoId) return `https://www.youtube.com/watch?v=${encodeURIComponent(video.videoId)}`;
+  return "#";
+}
+
+function channelName(video){
+  const name=String(video.channel||"").trim();
+  if(name) return name;
+  return String(video.channelId||"").toLowerCase()==="orb7" ? "ORB7" : "BKD Tutorials";
+}
+
+function buildParams(){
+  const params=new URLSearchParams();
+  params.set("page",state.page);
+  params.set("limit",LIMIT);
+  if(state.q) params.set("q",state.q);
+
+  if(state.filter==="bkd"){
+    params.set("channel","bkd");
+    params.set("sort","popular");
+  }else if(state.filter==="orb7"){
+    params.set("channel","orb7");
+    params.set("sort","popular");
+  }else{
+    params.set("sort","latest");
+  }
+  return params;
+}
+
+function updateHeading(){
+  const heading=document.querySelector('.section-title');
+  const pageTitle=document.getElementById('pageTitle');
+  const pageDescription=document.getElementById('pageDescription');
+
+  if(state.filter!=="all"){
+    const name=state.filter==="bkd" ? "BKD Tutorials" : "ORB7";
+    if(heading) heading.innerHTML='<i class="fa-solid fa-fire"></i> Video Populer';
+    if(pageTitle) pageTitle.innerHTML='Video <span>Populer</span>';
+    if(pageDescription) pageDescription.textContent=`Video paling populer dari ${name} berdasarkan jumlah tayangan.`;
+  }else{
+    if(heading) heading.innerHTML='<i class="fa-solid fa-play"></i> Video Terbaru';
+    if(pageTitle) pageTitle.innerHTML='Video <span>Terbaru</span>';
+    if(pageDescription) pageDescription.textContent='Temukan video tutorial, informasi, dan konten terbaru dari ekosistem BKD Media dalam satu tempat.';
+  }
+}
+
+function createCard(video){
+  const title=esc(video.title||"Video tanpa judul");
+  const thumbnail=esc(video.thumbnail||"");
+  const channel=esc(channelName(video));
+  const date=esc(formatDate(video.publishedAt));
+  const views=formatViews(video.views);
+  const url=esc(getVideoUrl(video));
+  const duration=esc(video.duration||"");
+
+  const article=document.createElement("article");
+  article.className="video";
+  article.innerHTML=`
+    <a class="video-thumb" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="Tonton ${title}">
+      ${thumbnail ? `<img src="${thumbnail}" alt="${title}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">` : ""}
+      <span class="play"><i class="fa-solid fa-play"></i></span>
+      ${duration ? `<span class="duration">${duration}</span>` : ""}
+    </a>
+    <div class="video-body">
+      <h3>${title}</h3>
+      <div class="video-meta">
+        <span class="publisher-fallback">${channel.toUpperCase().slice(0,2)}</span>
+        <span><b>${channel}</b> · ${state.filter!=="all" ? views : date}</span>
+      </div>
+      <div class="video-actions">
+        <a class="watch" href="${url}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play"></i> Tonton</a>
+      </div>
+    </div>`;
+  return article;
+}
+
+function render(videos){
+  list.innerHTML="";
+  if(!videos.length){
+    empty.style.display="block";
+    return;
+  }
+  empty.style.display="none";
+  const fragment=document.createDocumentFragment();
+  videos.forEach(v=>fragment.appendChild(createCard(v)));
+  list.appendChild(fragment);
+}
+
+async function loadVideos(){
+  if(state.loading) return;
+  state.loading=true;
+  loading.classList.add('show');
+  empty.style.display='none';
+
+  if(state.page===1){
+    list.innerHTML='<div class="video-loading show">Memuat video…</div>';
+  }
+
+  try{
+    const response=await fetch(`${API_URL}?${buildParams().toString()}`,{headers:{Accept:"application/json"}});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    if(data.success===false) throw new Error(data.error||"API error");
+
+    const videos=Array.isArray(data.videos)?data.videos:[];
+    state.total=Number(data.total||videos.length||0);
+    state.totalPages=Number(data.totalPages||Math.max(1,Math.ceil(state.total/LIMIT)));
+
+    render(videos);
+    count.textContent=state.filter!=="all"
+      ? `${new Intl.NumberFormat("id-ID").format(state.total)} video populer`
+      : `${new Intl.NumberFormat("id-ID").format(state.total)} video`;
+
+    if(state.page>=state.totalPages || videos.length===0){
+      videoEnd.classList.add('show');
+    }else{
+      videoEnd.classList.remove('show');
+    }
+  }catch(error){
+    console.error(error);
+    list.innerHTML='<div class="empty" style="display:block">Video belum dapat dimuat. Silakan refresh halaman beberapa saat lagi.</div>';
+    count.textContent='Gagal memuat video';
+  }finally{
+    state.loading=false;
+    loading.classList.remove('show');
+  }
+}
+
+buttons.forEach(btn=>btn.addEventListener('click',()=>{
+  buttons.forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  state.filter=btn.dataset.filter;
+  state.page=1;
+  updateHeading();
+  loadVideos();
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+
+window.addEventListener('scroll',()=>{
+  if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-450){
+    if(!state.loading && state.page<state.totalPages){
+      state.page++;
+      loadVideos();
+    }
+  }
+},{passive:true});
+
+const menuToggle=document.querySelector('.menu-toggle');
+const desktopNav=document.querySelector('.desktop-nav');
+if(menuToggle){
+  menuToggle.addEventListener('click',()=>{
+    const open=menuToggle.getAttribute('aria-expanded')==='true';
+    menuToggle.setAttribute('aria-expanded',String(!open));
+    menuToggle.innerHTML=open ? '<i class="fa-solid fa-bars"></i>' : '<i class="fa-solid fa-xmark"></i>';
+    if(desktopNav && window.innerWidth<760) desktopNav.classList.toggle('mobile-open',!open);
+  });
+}
+
+updateHeading();
+loadVideos();
+</script>
+</body></html>
