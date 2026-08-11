@@ -204,7 +204,40 @@
 .video-actions{
   display:none !important;
 }
+.pagination{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    margin:24px 0 10px;
+    flex-wrap:wrap;
+}
 
+.pagination button{
+    min-width:38px;
+    height:38px;
+    padding:0 10px;
+    border:1px solid rgba(82,190,255,.25);
+    border-radius:10px;
+    background:#0b1b2d;
+    color:#8fa9bd;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.pagination button:hover{
+    border-color:#4db8ff;
+    color:#fff;
+    background:#10263d;
+}
+
+.pagination button.active{
+    background:#168cff;
+    border-color:#168cff;
+    color:#fff;
+}
 /* Mobile */
 @media(max-width:699px){
   .video{
@@ -256,6 +289,7 @@
 <div class="videos" id="videos"></div>
 <div class="video-loading" id="videoLoading">Memuat video berikutnya…</div>
 <div class="video-loading" id="videoEnd">Semua video telah ditampilkan.</div>
+<div class="pagination" id="pagination"></div>
 <div class="empty" id="empty">Belum ada video untuk sumber ini.</div>
 </div></main>
 
@@ -271,7 +305,7 @@ const count=document.getElementById('resultCount');
 const empty=document.getElementById('empty');
 const loading=document.getElementById('videoLoading');
 const videoEnd=document.getElementById('videoEnd');
-
+const pagination=document.getElementById('pagination');
 const state={
   filter:"all",
   q:"",
@@ -294,7 +328,37 @@ function formatViews(n){
   if(n>=1000) return (n/1000).toFixed(n%1000===0?0:1).replace(".",",")+" rb views";
   return n+" views";
 }
+function renderPagination(){
+    pagination.innerHTML="";
 
+    if(state.totalPages<=1) return;
+
+    const fragment=document.createDocumentFragment();
+
+    for(let i=1;i<=state.totalPages;i++){
+        const button=document.createElement("button");
+
+        button.type="button";
+        button.textContent=i;
+        button.className=i===state.page ? "active" : "";
+
+        button.addEventListener("click",()=>{
+            if(state.loading || i===state.page) return;
+
+            state.page=i;
+            loadVideos();
+
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
+        });
+
+        fragment.appendChild(button);
+    }
+
+    pagination.appendChild(fragment);
+}
 function formatDate(value){
   if(!value) return "";
   const d=new Date(value);
@@ -437,7 +501,7 @@ async function loadVideos(){
     const videos=Array.isArray(data.videos)?data.videos:[];
     state.total=Number(data.total||videos.length||0);
     state.totalPages=Number(data.totalPages||Math.max(1,Math.ceil(state.total/LIMIT)));
-
+renderPagination();
     render(videos);
     count.textContent=state.filter!=="all"
       ? `${new Intl.NumberFormat("id-ID").format(state.total)} video populer`
