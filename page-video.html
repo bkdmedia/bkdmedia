@@ -210,29 +210,38 @@ function createCard(video){
   const title=esc(video.title||"Video tanpa judul");
   const thumbnail=esc(video.thumbnail||"");
   const channel=esc(channelName(video));
+  const channelAvatar=esc(video.channelAvatar||"");
   const date=esc(formatDate(video.publishedAt));
   const views=formatViews(video.views);
   const url=esc(getVideoUrl(video));
-  const duration=esc(video.duration||"");
 
   const article=document.createElement("article");
   article.className="video";
+
   article.innerHTML=`
-    <a class="video-thumb" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="Tonton ${title}">
-      ${thumbnail ? `<img src="${thumbnail}" alt="${title}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">` : ""}
+    <a class="video-thumb" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${title}">
+      ${thumbnail ? `<img src="${thumbnail}" alt="${title}" loading="lazy">` : ""}
       <span class="play"><i class="fa-solid fa-play"></i></span>
-      ${duration ? `<span class="duration">${duration}</span>` : ""}
     </a>
+
     <div class="video-body">
       <h3>${title}</h3>
+
       <div class="video-meta">
-        <span class="publisher-fallback">${channel.toUpperCase().slice(0,2)}</span>
-        <span><b>${channel}</b> · ${state.filter!=="all" ? views : date}</span>
+        ${channelAvatar
+          ? `<img class="publisher-avatar" src="${channelAvatar}" alt="${channel}">`
+          : `<span class="publisher-fallback">${channel.toUpperCase().slice(0,2)}</span>`
+        }
+
+        <span class="publisher-info">
+          <b>${channel}</b>
+          <span class="meta-separator">·</span>
+          <span>${state.filter!=="all" ? views : date}</span>
+        </span>
       </div>
-      <div class="video-actions">
-        <a class="watch" href="${url}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play"></i> Tonton</a>
-      </div>
-    </div>`;
+    </div>
+  `;
+
   return article;
 }
 
