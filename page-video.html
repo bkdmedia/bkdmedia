@@ -238,6 +238,16 @@
     border-color:#168cff;
     color:#fff;
 }
+  .pagination-dots{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:30px;
+  height:38px;
+  color:#8fa8bd;
+  font-size:13px;
+  font-weight:700;
+}
 /* Mobile */
 @media(max-width:699px){
   .video{
@@ -329,35 +339,85 @@ function formatViews(n){
   return n+" views";
 }
 function renderPagination(){
-    pagination.innerHTML="";
+  pagination.innerHTML="";
 
-    if(state.totalPages<=1) return;
+  if(state.totalPages<=1) return;
 
-    const fragment=document.createDocumentFragment();
+  const fragment=document.createDocumentFragment();
 
-    for(let i=1;i<=state.totalPages;i++){
-        const button=document.createElement("button");
+  function addPage(page){
+    const button=document.createElement("button");
 
-        button.type="button";
-        button.textContent=i;
-        button.className=i===state.page ? "active" : "";
+    button.type="button";
+    button.textContent=page;
+    button.className=page===state.page ? "active" : "";
 
-        button.addEventListener("click",()=>{
-            if(state.loading || i===state.page) return;
+    button.addEventListener("click",()=>{
+      if(state.loading || page===state.page) return;
 
-            state.page=i;
-            loadVideos();
+      state.page=page;
+      loadVideos();
 
-            window.scrollTo({
-                top:0,
-                behavior:"smooth"
-            });
-        });
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+    });
 
-        fragment.appendChild(button);
+    fragment.appendChild(button);
+  }
+
+  function addDots(){
+    const dots=document.createElement("span");
+    dots.textContent="...";
+    dots.className="pagination-dots";
+    fragment.appendChild(dots);
+  }
+
+  const total=state.totalPages;
+  const current=state.page;
+
+  // Jika jumlah halaman sedikit, tampilkan semuanya
+  if(total<=7){
+    for(let i=1;i<=total;i++){
+      addPage(i);
+    }
+  }
+
+  // Halaman awal
+  else if(current<=4){
+    for(let i=1;i<=5;i++){
+      addPage(i);
     }
 
-    pagination.appendChild(fragment);
+    addDots();
+    addPage(total);
+  }
+
+  // Halaman akhir
+  else if(current>=total-3){
+    addPage(1);
+    addDots();
+
+    for(let i=total-4;i<=total;i++){
+      addPage(i);
+    }
+  }
+
+  // Halaman tengah
+  else{
+    addPage(1);
+    addDots();
+
+    addPage(current-1);
+    addPage(current);
+    addPage(current+1);
+
+    addDots();
+    addPage(total);
+  }
+
+  pagination.appendChild(fragment);
 }
 function formatDate(value){
   if(!value) return "";
