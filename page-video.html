@@ -99,7 +99,20 @@
   border-radius:12px !important;
   background:#050b16 !important;
 }
-
+.video-thumb .duration{
+  position:absolute;
+  right:8px;
+  bottom:8px;
+  padding:3px 5px;
+  border-radius:4px;
+  background:rgba(0,0,0,.78);
+  color:#fff;
+  font-size:11px;
+  font-weight:600;
+  line-height:1;
+  letter-spacing:.1px;
+  z-index:3;
+}
 .video-thumb img{
   position:absolute !important;
   inset:0 !important;
@@ -335,7 +348,23 @@ function updateHeading(){
     if(pageDescription) pageDescription.textContent='Temukan video tutorial, informasi, dan konten terbaru dari ekosistem BKD Media dalam satu tempat.';
   }
 }
+function formatDuration(duration){
+  if(!duration) return "";
 
+  const match=duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+
+  if(!match) return "";
+
+  const hours=Number(match[1]||0);
+  const minutes=Number(match[2]||0);
+  const seconds=Number(match[3]||0);
+
+  if(hours>0){
+    return `${hours}:${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+  }
+
+  return `${minutes}:${String(seconds).padStart(2,"0")}`;
+}
 function createCard(video){
   const title=esc(video.title||"Video tanpa judul");
   const thumbnail=esc(video.thumbnail||"");
@@ -344,6 +373,7 @@ function createCard(video){
   const date=esc(formatDate(video.publishedAt));
   const views=formatViews(video.views);
   const url=esc(getVideoUrl(video));
+  const duration=formatDuration(video.duration);
 
   const article=document.createElement("article");
   article.className="video";
@@ -352,6 +382,7 @@ function createCard(video){
     <a class="video-thumb" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${title}">
       ${thumbnail ? `<img src="${thumbnail}" alt="${title}" loading="lazy">` : ""}
       <span class="play"><i class="fa-solid fa-play"></i></span>
+${duration ? `<span class="duration">${duration}</span>` : ""}
     </a>
 
     <div class="video-body">
