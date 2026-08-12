@@ -311,10 +311,6 @@
 </div>
 
 
-<div class="section-head">
-  <h2 class="section-title"><i class="fa-solid fa-play"></i> Video Terbaru</h2>
- 
-</div>
 <div class="videos" id="videos"></div>
 <div class="video-loading" id="videoLoading">Memuat video berikutnya…</div>
 <div class="video-loading" id="videoEnd">Semua video telah ditampilkan.</div>
@@ -483,11 +479,11 @@ function updateHeading(){
   if(state.filter!=="all"){
     const name=state.filter==="bkd" ? "BKD Tutorials" : "ORB7";
     if(heading) heading.innerHTML='<i class="fa-solid fa-fire"></i> Video Populer';
-    if(pageTitle) pageTitle.innerHTML='Video <span>Populer</span>';
+   if(pageTitle) pageTitle.innerHTML=`<i class="fa-solid fa-fire"></i> Video <span>Populer</span>`;
     if(pageDescription) pageDescription.textContent=`Video paling populer dari ${name} berdasarkan jumlah tayangan.`;
   }else{
     if(heading) heading.innerHTML='<i class="fa-solid fa-play"></i> Video Terbaru';
-    if(pageTitle) pageTitle.innerHTML='Video <span>Terbaru</span>';
+    if(pageTitle) pageTitle.innerHTML=`<i class="fa-solid fa-play"></i> Video <span>Terbaru</span>`;
     if(pageDescription) pageDescription.textContent='Temukan video tutorial, informasi, dan konten terbaru dari ekosistem BKD Media dalam satu tempat.';
   }
 }
