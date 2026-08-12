@@ -330,7 +330,7 @@ const LIMIT = 24;
 
 const buttons=[...document.querySelectorAll('.filter[data-filter]')];
 const list=document.getElementById('videos');
-const count=document.getElementById('resultCount');
+
 const empty=document.getElementById('empty');
 const loading=document.getElementById('videoLoading');
 const videoEnd=document.getElementById('videoEnd');
@@ -582,9 +582,7 @@ async function loadVideos(){
     state.totalPages=Number(data.totalPages||Math.max(1,Math.ceil(state.total/LIMIT)));
 renderPagination();
     render(videos);
-    count.textContent=state.filter!=="all"
-      ? `${new Intl.NumberFormat("id-ID").format(state.total)} video populer`
-      : `${new Intl.NumberFormat("id-ID").format(state.total)} video`;
+  
 
     if(state.page>=state.totalPages || videos.length===0){
       videoEnd.classList.add('show');
