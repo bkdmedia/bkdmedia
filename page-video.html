@@ -89,17 +89,72 @@
   vertical-align:middle !important;
 }
 .filter{
-  border-color:transparent !important;
+  position:relative;
+  display:inline-flex !important;
+  align-items:center;
+  gap:6px;
+  border:0 !important;
   background:transparent !important;
   color:#91a4ba !important;
   border-radius:6px !important;
-  padding:6px 9px !important;
+  padding:7px 10px !important;
+  font-size:10px !important;
+  font-weight:700 !important;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.filter:hover{
+  color:#dcecff !important;
+  background:rgba(22,148,255,.06) !important;
 }
 
 .filter.active{
-  background:rgba(22,148,255,.12) !important;
-  border-color:transparent !important;
+  background:rgba(22,148,255,.10) !important;
   color:#69c6ff !important;
+}
+
+.filter.active::after{
+  content:"";
+  position:absolute;
+  left:10px;
+  right:10px;
+  bottom:2px;
+  height:2px;
+  border-radius:2px;
+  background:#168cff;
+}
+
+.tab-youtube{
+  font-size:14px;
+  color:#69c6ff;
+}
+
+.tab-avatar{
+  width:18px;
+  height:18px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#34495e;
+  color:#c7d2df;
+  font-size:7px;
+  font-weight:800;
+  letter-spacing:-.2px;
+}
+
+.filter.active .tab-youtube{
+  color:#69c6ff;
+}
+
+.filter:not(.active) .tab-youtube{
+  color:#f5f8fc;
+}
+
+.filter.active .tab-avatar{
+  background:#168cff;
+  color:#fff;
 }
 /* VIDEO CARD FINAL */
 .video{
@@ -311,9 +366,20 @@
 <p class="page-copy" id="pageDescription">Temukan video tutorial, informasi, dan konten terbaru dari ekosistem BKD Media dalam satu tempat.</p>
 
 <div class="toolbar" aria-label="Filter sumber video">
-<button class="filter active" data-filter="all">Semua Video</button>
-<button class="filter" data-filter="bkd">BKD Tutorials</button>
-<button class="filter" data-filter="orb7">ORB7</button>
+<button class="filter active" data-filter="all">
+  <i class="fa-brands fa-youtube tab-youtube"></i>
+  <span>YouTube</span>
+</button>
+
+<button class="filter" data-filter="bkd">
+  <span class="tab-avatar">BKD</span>
+  <span>BKD Tutorials</span>
+</button>
+
+<button class="filter" data-filter="orb7">
+  <span class="tab-avatar">ORB</span>
+  <span>ORB7</span>
+</button>
 </div>
 
 
